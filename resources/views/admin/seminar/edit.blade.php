@@ -66,9 +66,9 @@
                         <div class="card-body">
                             <h2 class="h4 mb-3">Featured product</h2>
                             <div class="mb-3">
-                                <select name="fstatus" id="status" class="form-control">
-                                    <option value="no" @if(($seminars->isFeatured)=='no') 'selected'  @endif>No</option>
-                                    <option value="yes" @if(($seminars->isFeatured)=='yes') 'selected'  @endif>Yes</option>
+                                <select name="Feature" id="Feature" class="form-control">
+                                    <option value="no" @if(($seminars->Feature)==0) 'selected'  @endif>No</option>
+                                    <option value="yes" @if(($seminars->Feature)==1) 'selected'  @endif>Yes</option>
                                 </select>
                                 <p class="error"></p>
                             </div>
@@ -78,8 +78,8 @@
             </div>
 
             <div class="pb-5 pt-3">
-                <button class="btn btn-primary">Create</button>
-                <a href="{{route('seminars.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
+                <button class="btn btn-primary">Edit</button>
+                <a href="{{route('seminar.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
             </div>
         </div>
     </form>
@@ -95,7 +95,7 @@
 		$("button[type=submit]").prop('disable',true);
 
 		$.ajax({
-			url: "{{route('seminar.update',$seminar->id)}}",
+			url: "{{route('seminar.update',$seminars->id)}}",
 			type: "POST",
 			data: new FormData(this),
 			dataType: 'json',

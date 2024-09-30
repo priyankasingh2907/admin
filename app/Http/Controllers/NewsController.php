@@ -103,7 +103,7 @@ class NewsController extends Controller
     {
         $news = news::find($id);
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
+            'title' => 'required|max:255',
             
         ]);
         if ($validator->passes()) {

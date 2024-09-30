@@ -25,7 +25,8 @@ class SeminarController extends Controller
         $seminar= $seminar->paginate(8);
         
         // dd($seminar);
-        view('admin.seminar.list',['seminars'=>$seminar]);
+            // return view('admin.seminar.list', compact('seminars'));
+            return view('admin.seminar.list',['seminars'=>$seminar]);
     }
 
     /**
@@ -43,7 +44,7 @@ class SeminarController extends Controller
     {
         // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
+            'title' => 'required|max:255',
             
         ]);
         if ($validator->passes()) {
@@ -108,7 +109,7 @@ class SeminarController extends Controller
             $img = $request->image;
             $ext = $img->getClientOriginalExtension();
             $imageName = time() . '.' . $ext;
-            $img->move(public_path() . '/uploads/brands', $imageName);
+            $img->move(public_path() . '/uploads/seminars', $imageName);
 
          
             $seminar->title = $request->title;

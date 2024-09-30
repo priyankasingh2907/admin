@@ -16,7 +16,7 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <form action="" method="post" id="MemberForm" name="MemberForm">
+    <form action=""  id="MemberForm" name="MemberForm">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
@@ -140,10 +140,10 @@
 
 
 
-					$('#title').removeClass('is-invalid');
-					$('#title').siblings('p').removeClass('.invalid-feedback text-danger').html("");
-					$('#image').removeClass('is-invalid');
-					$('#image').siblings('p').removeClass('.invalid-feedback text-danger').html("");
+					// $('#title').removeClass('is-invalid');
+					// $('#title').siblings('p').removeClass('.invalid-feedback text-danger').html("");
+					// $('#image').removeClass('is-invalid');
+					// $('#image').siblings('p').removeClass('.invalid-feedback text-danger').html("");
 
 
 
@@ -163,22 +163,22 @@
 
 
 
-					if (errors['title']) {
-						$('#title').addClass('is-invalid');
-						$('#title').siblings('p').addClass('.invalid-feedback text-danger').html(errors['title']);
+					// if (errors['title']) {
+					// 	$('#title').addClass('is-invalid');
+					// 	$('#title').siblings('p').addClass('.invalid-feedback text-danger').html(errors['title']);
 
-					} else {
-						$('#title').removeClass('is-invalid');
-						$('#title').siblings('p').removeClass('.invalid-feedback text-danger').html("");
-					}
-						if (errors['image']) {
-						$('#image').addClass('is-invalid');
-						$('#image').siblings('p').addClass('.invalid-feedback text-danger').html(errors['image']);
+					// } else {
+					// 	$('#title').removeClass('is-invalid');
+					// 	$('#title').siblings('p').removeClass('.invalid-feedback text-danger').html("");
+					// }
+					// 	if (errors['image']) {
+					// 	$('#image').addClass('is-invalid');
+					// 	$('#image').siblings('p').addClass('.invalid-feedback text-danger').html(errors['image']);
 
-					} else {
-						$('#image').removeClass('is-invalid');
-						$('#image').siblings('p').removeClass('.invalid-feedback text-danger').html("");
-					}
+					// } else {
+					// 	$('#image').removeClass('is-invalid');
+					// 	$('#image').siblings('p').removeClass('.invalid-feedback text-danger').html("");
+					// }
 
 				}
 

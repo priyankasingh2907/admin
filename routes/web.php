@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\authController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewsController;
@@ -74,6 +75,8 @@ Route::post('/news/update/{id}', [NewsController::class, "update"])->name('news.
 Route::get('/news/delete/{id}', [NewsController::class, "destory"])->name('news.delete');
 
 //seminar Route 
+
+
 Route::get('/seminar', [SeminarController::class, 'index'])->name('seminar.index');
 Route::get('/seminar/create', [SeminarController::class, "create"])->name('seminar.create');
 Route::post('/seminar/store', [SeminarController::class, "store"])->name('seminar.store');
@@ -107,3 +110,5 @@ Route::get('/video/delete/{id}', [VideoController::class, "destory"])->name('vid
     }); 
 
 });
+//frontend
+Route::get('/frontend',[FrontendController::class,'index']);

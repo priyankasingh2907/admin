@@ -51,7 +51,7 @@
 										@foreach($slider as $sliders)
                                         <tr>
                                             <td>{{ $sliders->id }}</td>
-                                            <td><img src="{{ asset('uploads/sliders/'.$sliders->image)}}" alt="Product Image" width="50"></td>
+                                            <td><img src="{{ asset('uploads/slider/'.$sliders->image)}}" alt="Product Image" width="50"></td>
                                             <td>{{ $sliders->title }}</td>
                                             
                                             <td>

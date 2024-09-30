@@ -17,7 +17,7 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <form action="" method="post" id="sliderEditForm" name="sliderEditForm">
+    <form action=""  id="sliderEditForm" name="sliderEditForm">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
@@ -38,7 +38,7 @@
                     <div class="card mb-3">
                         <div class="card-body">
                             <h2 class="h4 mb-3">Media</h2>
-                            <img src="{{ asset('uploads/sliders/'.$slider->image)}}" alt="Product Image" width="50">
+                            <img src="{{ asset('uploads/slider/'.$slider->image)}}" alt="Product Image" width="50">
                              <label for="image">Image</label>
                             <input type="file" name="image" id="image" class="form-control" placeholder="image">
                             <p class="error"></p>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="pb-5 pt-3">
-                <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-primary" >Edit</button>
                 <a href="{{route('slider.index')}}" class="btn btn-outline-dark ml-3">Cancel</a>
             </div>
         </div>
@@ -94,7 +94,7 @@
 
 		$.ajax({
 			url: "{{route('slider.update',$slider->id)}}",
-			type: "POST",
+			type: "post",
 			data: new FormData(this),
 			dataType: 'json',
 			contentType: false,

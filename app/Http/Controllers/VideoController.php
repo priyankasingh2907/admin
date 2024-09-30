@@ -98,29 +98,27 @@ class VideoController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $brands = Video::find($id);
+        $Videos = Video::find($id);
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'slug' => 'required|unique:brands,slug,'.$brands->id.',id',
+          'title' => 'required|max:255',
             
         ]);
         if ($validator->passes()) {
             $img = $request->image;
             $ext = $img->getClientOriginalExtension();
             $imageName = time() . '.' . $ext;
-            $img->move(public_path() . '/uploads/brands', $imageName);
+            $img->move(public_path() . '/uploads/Videos', $imageName);
 
          
-            $brands->name = $request->name;
-            $brands->slug = $request->slug;
-            $brands->image = $imageName;
-            $brands->status = $request->status;
-            $brands->save();
+            $Videos->title = $request->title;
+            $Videos->image = $imageName;
+            $Videos->status = $request->status;
+            $Videos->save();
 
-            Session()->flash('success','brands updated successfully..');
+            Session()->flash('success','Videos updated successfully..');
             return response()->json([
                 'status' => true,
-                'message' => 'Data updated successfully',
+                'message' => 'Videos updated successfully',
                 'data' => $request->all(),
 
             ]);

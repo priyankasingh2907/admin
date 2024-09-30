@@ -82,9 +82,9 @@
                         <div class="card-body">
                             <h2 class="h4 mb-3">Product Status</h2>
                             <div class="mb-3">
-                                <select name="fstatus" id="status" class="form-control">
-                                    <option value="no" @if(($news->status)=='0') 'selected'  @endif>No</option>
-                                    <option value="yes" @if(($news->status)=='1') 'selected'  @endif>Yes</option>
+                                <select name="Feature" id="Feature" class="form-control">
+                                    <option value=0 @if(($news->Feature)=='0') 'selected'  @endif>No</option>
+                                    <option value=1 @if(($news->Feature)=='1') 'selected'  @endif>Yes</option>
                                 </select>
                                 <p class="error"></p>
                             </div>
@@ -97,8 +97,8 @@
                             <h2 class="h4 mb-3">Featured product</h2>
                             <div class="mb-3">
                                 <select name="fstatus" id="status" class="form-control">
-                                    <option value="no" @if(($news->Feature)=='no') 'selected'  @endif>No</option>
-                                    <option value="yes" @if(($news->Feature)=='yes') 'selected'  @endif>Yes</option>
+                                    <option value=0 @if(($news->Feature)==0) 'selected'  @endif>No</option>
+                                    <option value=1 @if(($news->Feature)==1) 'selected'  @endif>Yes</option>
                                 </select>
                                 <p class="error"></p>
                             </div>
@@ -119,6 +119,7 @@
 @endsection
 
 @section('customJs')
+
 <script>
 
     	$("#newsEditForm").submit(function(e) {

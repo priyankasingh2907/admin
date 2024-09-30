@@ -66,8 +66,8 @@
                             <h2 class="h4 mb-3">Featured product</h2>
                             <div class="mb-3">
                                 <select name="Feature" id="status" class="form-control">
-                                    <option value="no">No</option>
-                                    <option value="yes">Yes</option>
+                                    <option value=1>No</option>
+                                    <option value=1>Yes</option>
                                 </select>
                                 <p class="error"></p>
                             </div>

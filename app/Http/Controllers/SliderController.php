@@ -98,6 +98,7 @@ class SliderController extends Controller
      */
     public function update(Request $request,$id)
     {
+        // dd($request);
         $slider = slider::find($id);
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:255',
@@ -110,7 +111,7 @@ class SliderController extends Controller
             $img->move(public_path() . '/uploads/slider', $imageName);
 
          
-            $slider->name = $request->name;
+            $slider->title	 = $request->title;
             $slider->image = $imageName;
             $slider->status = $request->status;
             $slider->save();

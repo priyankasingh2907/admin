@@ -17,7 +17,7 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <form action="" method="post" id="printEditForm" name="printEditForm">
+    <form id="printEditForm" name="printEditForm">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -63,7 +63,7 @@
                         <div class="card-body">
                             <h2 class="h4 mb-3">Featured product</h2>
                             <div class="mb-3">
-                                <select name="fstatus" id="status" class="form-control">
+                                <select name="Feature" id="Feature" class="form-control">
                                     <option value="no" @if(($pictureMedias->Feature)==0) 'selected'  @endif>No</option>
                                     <option value="yes" @if(($pictureMedias->Feature)==1) 'selected'  @endif>Yes</option>
                                 </select>
