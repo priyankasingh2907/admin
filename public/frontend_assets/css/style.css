@@ -1819,7 +1819,12 @@ button.close:hover {
     position: relative;
     z-index: 9;
 }
-
+.bg-navy-op{
+    width: 100vh;
+    text-align: center;
+    padding: 5px;
+    background: #031c3c80;
+}
 .shortcode .row {
     margin-left: -15px;
     margin-right: -15px;
@@ -3083,7 +3088,41 @@ h1.title2 {
 
 .ministryArea .minBox:hover {
     border-radius: 0px;
-    transition: all 0.3s ease-out 0s;
+    transition: all 1s ease-out 3s;
+    -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+  @keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
 }
 
 .ministryArea img {

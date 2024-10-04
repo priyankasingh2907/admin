@@ -21,7 +21,10 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Admin\member::factory(10)->create();
         // \App\Models\Admin\gallery::factory(10)->create();
 
-        \App\Models\Admin\categories::factory(10)->create();
+        // \App\Models\Admin\categories::factory(10)->create();
+        // \App\Models\Admin\contact::factory(10)->create();
+        // \App\Models\Admin\officerInteraction::factory(10)->create();
+        \App\Models\Admin\actiontakenreport::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

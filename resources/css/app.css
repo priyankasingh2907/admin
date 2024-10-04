@@ -1,0 +1,23 @@
+.imgsection{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+html{
+    background-image: linear-gradient(
+        335deg,
+        hsl(226deg 64% 18%) 0%,
+        hsl(227deg 64% 18%) 11%,
+        hsl(227deg 64% 17%) 21%,
+        hsl(228deg 64% 17%) 30%,
+        hsl(229deg 65% 16%) 40%,
+        hsl(230deg 65% 16%) 49%,
+        hsl(231deg 65% 15%) 57%,
+        hsl(232deg 66% 14%) 66%,
+        hsl(234deg 66% 14%) 74%,
+        hsl(237deg 67% 13%) 83%,
+        hsl(241deg 69% 12%) 91%,
+        hsl(251deg 100% 9%) 100%
+      );
+}

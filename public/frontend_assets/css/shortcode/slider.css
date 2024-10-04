@@ -39,7 +39,7 @@
 }
 
 .bg-overlay-dark-2:before {
-    background: rgba(31, 34, 62, 0.45);
+    background: #1f223e73;
 }
 
 .bg-overlay-dark-3:before {
@@ -78,7 +78,7 @@
 .banner-content .text-content,
 .banner-content .display-table-cell {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align:bottom;
 }
 
 h3.title-small {
@@ -137,6 +137,7 @@ p.sub-title {
 }
 
 .banner-content .text-content-wrapper.full-width {
+    background:rgba(31, 34, 62, 0.9) ;
     float: none;
     margin: auto;
     position: relative;

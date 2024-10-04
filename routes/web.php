@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\AboutDownloadController;
+use App\Http\Controllers\ActiontakenreportController;
 use App\Http\Controllers\admin\authController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\OfficerInteractionController;
 use App\Http\Controllers\PictureMediaController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\SliderController;
@@ -74,9 +78,25 @@ Route::get('/news/edit/{id}', [NewsController::class, "edit"])->name('news.edit'
 Route::post('/news/update/{id}', [NewsController::class, "update"])->name('news.update');
 Route::get('/news/delete/{id}', [NewsController::class, "destory"])->name('news.delete');
 
+//Route officerInteraction
+Route::get('/officerInteraction', [OfficerInteractionController::class, 'index'])->name('officerInteraction.index');
+Route::get('/officerInteraction/create', [OfficerInteractionController::class, "create"])->name('officerInteraction.create');
+Route::post('/officerInteraction/store', [OfficerInteractionController::class, "store"])->name('officerInteraction.store');
+Route::get('/officerInteraction/edit/{id}', [OfficerInteractionController::class, "edit"])->name('officerInteraction.edit');
+Route::post('/officerInteraction/update/{id}', [OfficerInteractionController::class, "update"])->name('officerInteraction.update');
+Route::get('/officerInteraction/delete/{id}', [OfficerInteractionController::class, "destory"])->name('officerInteraction.delete');
+
+//Route actiontakenreport
+Route::get('/actiontakenreport', [ActiontakenreportController::class, 'index'])->name('actiontakenreport.index');
+Route::get('/actiontakenreport/create', [ActiontakenreportController::class, "create"])->name('actiontakenreport.create');
+Route::post('/actiontakenreport/store', [ActiontakenreportController::class, "store"])->name('actiontakenreport.store');
+Route::get('/actiontakenreport/edit/{id}', [ActiontakenreportController::class, "edit"])->name('actiontakenreport.edit');
+Route::post('/actiontakenreport/update/{id}', [ActiontakenreportController::class, "update"])->name('actiontakenreport.update');
+Route::get('/actiontakenreport/delete/{id}', [ActiontakenreportController::class, "destory"])->name('actiontakenreport.delete');
+
+
+
 //seminar Route 
-
-
 Route::get('/seminar', [SeminarController::class, 'index'])->name('seminar.index');
 Route::get('/seminar/create', [SeminarController::class, "create"])->name('seminar.create');
 Route::post('/seminar/store', [SeminarController::class, "store"])->name('seminar.store');
@@ -107,8 +127,195 @@ Route::post('/video/store', [VideoController::class, "store"])->name('video.stor
 Route::get('/video/edit/{id}', [VideoController::class, "edit"])->name('video.edit');
 Route::post('/video/update/{id}', [VideoController::class, "update"])->name('video.update');
 Route::get('/video/delete/{id}', [VideoController::class, "destory"])->name('video.delete');
-    }); 
+  
+
+//contact Route 
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/contact/create', [ContactController::class, "create"])->name('contact.create');
+Route::post('/contact/store', [ContactController::class, "store"])->name('contact.store');
+Route::get('/contact/edit/{id}', [ContactController::class, "edit"])->name('contact.edit');
+Route::post('/contact/update/{id}', [ContactController::class, "update"])->name('contact.update');
+Route::get('/contact/delete/{id}', [ContactController::class, "destory"])->name('contact.delete');
+  
+}); 
+
+    
 
 });
 //frontend
 Route::get('/frontend',[FrontendController::class,'index']);
+
+Route::get('one', function () {
+    return view('frontend.home.joinUs.joinUS');
+});
+
+Route::get('two', function () {
+    return view('frontend.home.login.login');
+});
+
+Route::get('three', function () {
+    return view('frontend.home.about.whoWeAre');
+});
+
+Route::get('whatWeDo', function () {
+    return view('frontend.home.about.whatWeDo');
+});
+Route::get('howWeWork', function () {
+    return view('frontend.home.about.howWeWork');
+});
+
+Route::get('rulesAndRegulation', function () {
+    return view('frontend.home.about.rulesAndRegul');
+});
+
+
+Route::get('govtRecorg', function () {
+    return view('frontend.home.about.govtRecorg');
+});
+
+Route::get('function', function () {
+    return view('frontend.home.about.function');
+});
+
+Route::get('aboutNotice', function () {
+    return view('frontend.home.about.notices');
+});
+
+
+Route::get('funding', function () {
+    return view('frontend.home.about.funding');
+});
+
+
+Route::get('publication', function () {
+    return view('frontend.home.about.publication');
+});
+
+Route::get('presidentmessage', function () {
+    return view('frontend.home.administration.president_mesage');
+});
+
+Route::get('nationalPatron', function () {
+    return view('frontend.home.administration.nationalPatron');
+});
+Route::get('nationalAdvisor', function () {
+    return view('frontend.home.administration.nationalAdvisor');
+});
+
+Route::get('officeStaff', function () {
+    return view('frontend.home.administration.officeStaff');
+});
+
+
+
+Route::get('/contact', [FrontendController::class, 'contacts'])->name('frontend.contacts');
+
+Route::get('donate', function () {
+    return view('frontend.home.donate.donate');
+});
+
+
+
+Route::get('newComplain', function () {
+    return view('frontend.home.Complain.newComplain');
+});
+
+
+Route::get('complainStatus', function () {
+    return view('frontend.home.Complain.complainStatus');
+});
+
+Route::get('complaintdashboard', function () {
+    return view('frontend.home.Complain.complaintdashboard');
+});
+
+
+Route::get('Verification', function () {
+    return view('frontend.home.Verification.Verification');
+});
+
+Route::get('legal', function () {
+    return view('frontend.home.unit.cell.legal.legal');
+});
+
+Route::get('educational', function () {
+    return view('frontend.home.unit.cell.legal.educational');
+});
+
+
+Route::get('doctor', function () {
+    return view('frontend.home.unit.cell.legal.doctor');
+});
+
+
+
+Route::get('childrights', function () {
+    return view('frontend.home.unit.cell.legal.childrights');
+});
+
+
+
+Route::get('rti', function () {
+    return view('frontend.home.unit.cell.legal.rti');
+});
+
+
+Route::get('media', function () {
+    return view('frontend.home.unit.cell.legal.media');
+});
+
+
+
+Route::get('tribalrights', function () {
+    return view('frontend.home.unit.cell.legal.tribalrights');
+});
+
+
+Route::get('crimecontrol', function () {
+    return view('frontend.home.unit.cell.legal.crimecontrol');
+});
+
+
+
+Route::get('anti-corruption-unit', function () {
+    return view('frontend.home.unit.cell.legal.anti-corruption-unit');
+});
+
+
+
+Route::get('anti-human-trafficking-cell', function () {
+    return view('frontend.home.unit.cell.legal.anti-human-trafficking-cell');
+});
+
+
+
+Route::get('awardteam', function () {
+    return view('frontend.home.awardteam.awardteam');
+});
+
+
+
+Route::get('/header', function () {
+    return view('frontend.header2');
+});
+
+
+
+Route::get('/gallery', function () {
+    return view('frontend.home.gallery.gallery');
+});
+
+Route::get('/printmedia', [FrontendController::class,'media']);
+
+
+
+Route::get('/galleryimage', [FrontendController::class,'galleryimage']);
+Route::get('/officerinteraction', [FrontendController::class,'officerinteraction']);
+Route::get('/actiontakenreport', [FrontendController::class,'actiontakenreport']);
+Route::get('/electronicmedia', [FrontendController::class,'electronicmedia']);
+Route::get('/webmedia', [FrontendController::class,'webmedia']);
+Route::get('/policeletter', [FrontendController::class,'policeletter']);
+Route::get('/galleryvideo', [FrontendController::class,'galleryvideo']);
+Route::get('/awards', [FrontendController::class,'awards']);
+Route::get('/seminar', [FrontendController::class,'seminar']);
+

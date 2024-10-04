@@ -4,7 +4,7 @@
     color: #909090;
     font-size: 12px;
     font-weight: 400;
-    padding: 6px 0;
+    padding: 6px 0 0 0;
 }
 
 .header-login-register a {
@@ -611,7 +611,7 @@ nav#primary-menu.height-medium .main-menu>li>a {
 }
 
 .top_links ul li a {
-    font-size: 13px;
+    font-size: 9px;
     color: #fff;
     letter-spacing: 0.1px;
     padding-left: 10px;
